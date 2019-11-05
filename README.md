@@ -4,7 +4,8 @@ This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror
 
 This allows you to use an affordable touch sensor called the [AirBar](https://air.bar) to provide touch activity to a Smart Mirror.
 
-With this you can interact with your app like this:
+With this you can interact with your app like [this](https://media.giphy.com/media/lr7cmbmi7fnZzZ5V6L/giphy.gif):
+
 ![](https://media.giphy.com/media/lr7cmbmi7fnZzZ5V6L/giphy.gif)
 
 ## How to use
