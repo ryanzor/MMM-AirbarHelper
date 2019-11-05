@@ -4,6 +4,9 @@ This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror
 
 This allows you to use an affordable touch sensor called the [AirBar](https://air.bar) to provide touch activity to a Smart Mirror.
 
+With this you can interact with your app like this:
+![](https://media.giphy.com/media/lr7cmbmi7fnZzZ5V6L/giphy.gif)
+
 ## How to use
 
 1) Attach an [AirBar](https://air.bar) to your Raspbery Pi. I've had luck with the with the windows version.  I do not work for AirBar and in no way guarantee this step will work.
