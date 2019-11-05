@@ -8,13 +8,13 @@ This allows you to use an affordable touch sensor called the [AirBar](https://ai
 
 1) Attach an [AirBar](https://air.bar) to your Raspbery Pi. I've had luck with the with the windows version.  I do not work for AirBar and in no way guarantee this step will work.
 2) In the module you would like to work with AirBar implement:
-
+```js
 notificationReceived: function(notification, payload, sender) {
     if(notification == "AIRBARHELPER_INPUT") {
         // action you would like to have happen
     }
 }
-
+```
 _____
 
 I have not currently published any module that use this compatibility, but it is easy to fork an existing module or to build it into a new app.  If you add the functionality to an existing app let me know and I'll link it here.
@@ -32,12 +32,12 @@ To use this module, add the following configuration block to the modules array i
 var config = {
     modules: [
         {
-			module: "MMM-AirbarHelper",
-			config: {
-				barPosition: 'top',
+	module: "MMM-AirbarHelper",
+	config: {
+		barPosition: 'top',
                 debugMode: false
-			}
 		}
+	}
     ]
 }
 ```
