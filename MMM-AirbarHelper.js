@@ -9,7 +9,8 @@
 
 Module.register("MMM-AirbarHelper", {
 	defaults: {
-		barPosition: 'bottom'
+		barPosition: 'bottom',
+		debugMode: true
 	},
 
 	requiresVersion: "2.1.0", // Required version of MagicMirror
@@ -65,21 +66,24 @@ Module.register("MMM-AirbarHelper", {
 	getDom: function() {
 		var wrapper = document.createElement("div");
 		// TODO this is super hacky should be doable in css
-		wrapper.innerHTML = this.inputDetails + "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
+		if (this.config.debugMode) {
+			wrapper.innerHTML = this.inputDetails
+		}
+		wrapper.innerHTML += "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
 		Log.log('getDom');
 		
 		var touchStartX = 0;
 		var touchStartY = 0;
 		var touchStartTime = 0;
 		
-		wrapper.ontouchstart = (event) => {
+		wrapper.addEventListener('touchstart', () => {
 			touchStartX = event.touches[0].clientX;
 			touchStartY = event.touches[0].clientY;
 			touchStartTime = new Date().getTime();
-		}
+		}, false);
 		
 		
-		wrapper.ontouchend = (event) => {
+		wrapper.addEventListener('touchend', () => {
 			var inputTime = new Date().getTime();
 			var quickTouch = false;
 			if (inputTime - 200 <= this.lastInputTime) { // todo add to config
@@ -127,7 +131,8 @@ Module.register("MMM-AirbarHelper", {
 			});
 
 			this.updateDom();
-		}
+		
+		}, false);
 		return wrapper;
 	},
 	
